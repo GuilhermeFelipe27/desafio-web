@@ -1,7 +1,6 @@
 import { useState } from 'react'
 
 
-<<<<<<< HEAD
 export function App() {
   const [pesquisa, setPesquisa] = useState("")
 
@@ -35,16 +34,7 @@ return (
         ))}
       </ul>
     </div>
-  );
-=======
-  return (
-    <>
-      <h1>Oi</h1>
-
-      <Buscar />
-    </>
   )
->>>>>>> b98bf341518f8a984162d142a2afd54d8562dbf7
 }
 
 export default App
