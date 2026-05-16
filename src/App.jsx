@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Buscar from './equipe1/Buscar'
 
 
 export function App() {
@@ -15,7 +16,9 @@ return (
     <div style={{ padding: "20px" }}>
       <h1>Pesquisa por país</h1>
 
-      <input
+      <Buscar />
+
+      {/* <input
         type="text"
         placeholder="Pesquisar por país..."
         value={pesquisa}
@@ -26,13 +29,13 @@ return (
           borderRadius: "8px",
           border: "1px solid #ccc",
         }}
-      />
+      /> */}
 
-      <ul>
+      {/* <ul>
         {itensFiltrados.map((item, index) => (
           <li key={index}>{item}</li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   )
 }
