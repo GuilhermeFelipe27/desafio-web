@@ -1,42 +1,30 @@
 import { useState } from 'react'
 import Buscar from './equipe1/Buscar'
+import './App.css'
 
 
 export function App() {
   const [pesquisa, setPesquisa] = useState("")
 
-  const paises = ["Brasil", "Argentina", "Chile", "Colômbia", "Peru", "Venezuela", "Uruguai", "Paraguai", "Bolívia", "Equador"]
-  //const [paises, setPaises] = useState([])
-  const itensFiltrados = paises.filter((pais) => 
-    pais.toLowerCase().includes(pesquisa.toLowerCase())
-  );
-
   
 return (
-    <div style={{ padding: "20px" }}>
-      <h1>Pesquisa por país</h1>
+    <main className="app-shell">
+      <header className="app-header">
+        <h1>Pesquisa por país</h1>
+      </header>
 
-      <Buscar />
-
-      {/* <input
+      <section className="search-bar">
+      <input
         type="text"
         placeholder="Pesquisar por país..."
         value={pesquisa}
         onChange={(e) => setPesquisa(e.target.value)}
-        style={{
-          padding: "10px",
-          width: "300px",
-          borderRadius: "8px",
-          border: "1px solid #ccc",
-        }}
-      /> */}
+        className="search-input"
+      /> 
+      </section>
 
-      {/* <ul>
-        {itensFiltrados.map((item, index) => (
-          <li key={index}>{item}</li>
-        ))}
-      </ul> */}
-    </div>
+      <Buscar pesquisa={pesquisa} />
+    </main>
   )
 }
 
