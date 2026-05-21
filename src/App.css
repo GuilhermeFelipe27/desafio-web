@@ -147,3 +147,7 @@ body {
     gap: 4px;
   }
 }
+
+.modal-empty {
+  padding: 16px;
+}
