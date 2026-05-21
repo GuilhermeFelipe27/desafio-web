@@ -1,3 +1,153 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(170, 59, 255, 0.12), transparent 28%),
+    linear-gradient(180deg, #f7f7fb 0%, #ffffff 100%);
+}
+
+#root {
+  width: 100%;
+  min-height: 100svh;
+  border: 0;
+  display: block;
+}
+
+.app-shell {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 48px 0 56px;
+  text-align: left;
+}
+
+.app-header {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.app-header p {
+  max-width: 52ch;
+  color: var(--text);
+}
+
+.search-bar {
+  position: sticky;
+  top: 16px;
+  z-index: 2;
+  margin-bottom: 28px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(14px);
+  box-shadow: var(--shadow);
+}
+
+.search-input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 0;
+  outline: 0;
+  padding: 16px 18px;
+  border-radius: 12px;
+  background: var(--code-bg);
+  color: var(--text-h);
+  font: inherit;
+}
+
+.search-input::placeholder {
+  color: color-mix(in srgb, var(--text) 70%, transparent);
+}
+
+.search-input:focus {
+  box-shadow: inset 0 0 0 1px var(--accent-border);
+}
+
+.results-state {
+  margin: 24px 0 0;
+  color: var(--text);
+}
+
+.countries-section {
+  margin-top: 8px;
+}
+
+.countries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.country-card {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: var(--shadow);
+  transition: transform 22180ms ease, border-color 180ms ease;
+}
+
+.country-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-border);
+}
+
+.country-flag {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  background: var(--code-bg);
+}
+
+.country-content {
+  padding: 18px;
+}
+
+.country-content h2 {
+  margin-bottom: 14px;
+  font-size: 22px;
+}
+
+.country-details {
+  display: grid;
+  gap: 10px;
+}
+
+.country-details p {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 15px;
+}
+
+.country-details span {
+  color: var(--text-h);
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .app-shell {
+    width: min(100%, calc(100% - 20px));
+    padding: 20px 0 28px;
+  }
+
+  .search-bar {
+    top: 10px;
+    padding: 10px;
+  }
+
+  .countries-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .country-details p {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
 .counter {
   font-size: 16px;
   padding: 5px 10px;
