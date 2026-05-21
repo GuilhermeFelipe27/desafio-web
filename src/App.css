@@ -85,7 +85,7 @@ body {
   border-radius: 22px;
   background: rgba(255, 255, 255, 0.72);
   box-shadow: var(--shadow);
-  transition: transform 180ms ease, border-color 180ms ease;
+  transition: transform 22180ms ease, border-color 180ms ease;
 }
 
 .country-card:hover {

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import CartaoPais from "./CartaoPais";
 
 export default function Buscar({ pesquisa }) {
   const [dados, setDados] = useState([]);
@@ -35,23 +36,7 @@ export default function Buscar({ pesquisa }) {
     <section className="countries-section">
       <div className="countries-grid">
         {dadosFiltrados.map((pais) => (
-          <article className="country-card" key={pais.name.common}>
-            <img
-              className="country-flag"
-              src={pais.flags?.svg || pais.flags?.png}
-              alt={`Bandeira de ${pais.name.common}`}
-            />
-
-            <div className="country-content">
-              <h2>{pais.name.common}</h2>
-
-              <div className="country-details">
-                <p><span>Capital:</span> {pais.capital?.[0] || "-"}</p>
-                <p><span>Região:</span> {pais.region || "-"}</p>
-                <p><span>População:</span> {pais.population?.toLocaleString("pt-BR") || "-"}</p>
-              </div>
-            </div>
-          </article>
+          <CartaoPais key={pais.name.common} pais={pais} />
         ))}
       </div>
     </section>
